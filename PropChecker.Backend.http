@@ -1,0 +1,6 @@
+@PropChecker.Backend_HostAddress = http://localhost:5083
+
+GET {{PropChecker.Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
