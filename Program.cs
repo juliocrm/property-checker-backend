@@ -1,6 +1,7 @@
 using MongoDB.Driver;
 using PropChecker.Backend.Models;
 using PropChecker.Backend.Repositories;
+using PropChecker.Backend.Services;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,7 @@ builder.Services.AddSingleton(sp =>
 });
 
 builder.Services.AddSingleton<IPropertyRepository, PropertyRepository>();
+builder.Services.AddSingleton<IPropertyService, PropertyService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
