@@ -9,16 +9,20 @@ namespace PropChecker.Backend.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; } = string.Empty;
 
-        public string IdOwner { get; set; } = string.Empty;
-
+        [BsonElement("name")]
         public string Name { get; set; } = string.Empty;
 
+        [BsonElement("address")]
         public string Address { get; set; } = string.Empty;
 
+        [BsonElement("price")]
         public decimal Price { get; set; }
 
-        public string? CodeInternal { get; set; }
+        public string CodeInternal { get; set; } = string.Empty;
 
-        public int Year { get; set; }
+        public DateTime Year { get; set; }
+
+        [BsonElement("IdOwner")]
+        public string IdOwner { get; set; } = string.Empty;
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PropChecker.Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20863c943e33dadf9f39c26677ba69b9a4fd4681")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2de32caa36763e445ffeefec2807698d9131ef3")]
 [assembly: System.Reflection.AssemblyProductAttribute("PropChecker.Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PropChecker.Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

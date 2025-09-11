@@ -11,7 +11,7 @@ namespace PropChecker.Backend.Repositories
         public PropertyRepository(IMongoClient client, IOptions<MongoDbSettings> settings)
         {
             var database = client.GetDatabase(settings.Value.DatabaseName);
-            _propertiesCollection = database.GetCollection<Property>("Properties");
+            _propertiesCollection = database.GetCollection<Property>("Property");
         }
 
         public async Task<List<Property>> GetAllPropertiesAsync()
