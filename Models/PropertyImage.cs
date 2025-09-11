@@ -7,11 +7,11 @@ namespace PropChecker.Backend.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string Id { get; set; } = string.Empty;
 
-        public string IdProperty { get; set; }
+        public string IdProperty { get; set; } = string.Empty;
 
-        public byte[] File { get; set; }
+        public byte[] File { get; set; } = Array.Empty<byte>();
 
         public bool Enabled { get; set; }
     }
