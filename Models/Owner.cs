@@ -3,18 +3,24 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace PropChecker.Backend.Models
 {
+    [BsonIgnoreExtraElements(true)]
     public class Owner
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("IdOwner")]
         public string Id { get; set; } = string.Empty;
 
+        [BsonElement("Name")]
         public string Name { get; set; } = string.Empty;
 
-        public string? Address { get; set; }
+        [BsonElement("Address")]
+        public string Address { get; set; } = string.Empty;
 
-        public byte[]? Photo { get; set; }
+        [BsonElement("Photo")]
+        public string Photo { get; set; } = string.Empty;
 
-        public DateTime? Birthday { get; set; }
+        [BsonElement("Birthday")]
+        public DateTime Birthday { get; set; }
     }
 }

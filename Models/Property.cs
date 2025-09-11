@@ -3,23 +3,27 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace PropChecker.Backend.Models
 {
+    [BsonIgnoreExtraElements(true)]
     public class Property
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("IdProperty")]
         public string Id { get; set; } = string.Empty;
 
-        [BsonElement("name")]
+        [BsonElement("Name")]
         public string Name { get; set; } = string.Empty;
 
-        [BsonElement("address")]
+        [BsonElement("Address")]
         public string Address { get; set; } = string.Empty;
 
-        [BsonElement("price")]
+        [BsonElement("Price")]
         public decimal Price { get; set; }
 
+        [BsonElement("CodeInternal")]
         public string CodeInternal { get; set; } = string.Empty;
 
+        [BsonElement("Year")]
         public DateTime Year { get; set; }
 
         [BsonElement("IdOwner")]
