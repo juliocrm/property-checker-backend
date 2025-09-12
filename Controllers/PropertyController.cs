@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using PropChecker.Backend.Models;
+using PropChecker.Backend.Dtos;
 using PropChecker.Backend.Services;
 
 namespace PropChecker.Backend.Controllers
@@ -16,7 +16,7 @@ namespace PropChecker.Backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Property>>> GetProperties(
+        public async Task<ActionResult<List<PropertyWithImageDto>>> GetProperties(
             [FromQuery] string? name,
             [FromQuery] string? address,
             [FromQuery] decimal? minPrice,
