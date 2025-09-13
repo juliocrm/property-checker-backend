@@ -15,6 +15,14 @@ namespace PropChecker.Backend.Controllers
             _propertyService = propertyService;
         }
 
+        /// <summary>
+        /// Gets a list of properties with their main image, applying optional filters.
+        /// </summary>
+        /// <param name="name">Filter by property name (case-insensitive).</param>
+        /// <param name="address">Filter by property address (case-insensitive).</param>
+        /// <param name="minPrice">Filter by minimum price.</param>
+        /// <param name="maxPrice">Filter by maximum price.</param>
+        /// <returns>A list of properties matching the criteria.</returns>
         [HttpGet]
         public async Task<ActionResult<List<PropertyWithImageDto>>> GetProperties(
             [FromQuery] string? name,

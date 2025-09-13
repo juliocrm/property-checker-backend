@@ -15,13 +15,6 @@ builder.Services.AddSingleton<IMongoClient>(sp =>
     return new MongoClient(settings.ConnectionString);
 });
 
-builder.Services.AddSingleton(sp =>
-{
-    var client = sp.GetRequiredService<IMongoClient>();
-    var settings = sp.GetRequiredService<IOptions<MongoDbSettings>>().Value;
-    return client.GetDatabase(settings.DatabaseName);
-});
-
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
 builder.Services.AddScoped<IPropertyTraceRepository, PropertyTraceRepository>();
 builder.Services.AddScoped<IPropertyService, PropertyService>();
@@ -31,10 +24,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
+    var frontendURL = builder.Configuration.GetValue<string>("FrontendURL");
+
     options.AddDefaultPolicy(
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173")
+            policy.WithOrigins(frontendURL ?? "http://localhost:5173")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
