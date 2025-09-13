@@ -115,3 +115,7 @@ project.lock.json
 *.log.*
 *.DS_Store
 Thumbs.db
+
+# Local development settings
+appsettings.Development.json
+secrets.json

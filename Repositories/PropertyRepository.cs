@@ -65,7 +65,7 @@ namespace PropChecker.Backend.Repositories
 
         public async Task<Property> GetPropertyByIdAsync(string id)
         {
-            return await _propertiesCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+            return await _propertiesCollection.Find(x => x.IdProperty == id).FirstOrDefaultAsync();
         }
 
         public async Task<Property> CreatePropertyAsync(Property newProperty)
@@ -76,12 +76,12 @@ namespace PropChecker.Backend.Repositories
 
         public async Task UpdatePropertyAsync(string id, Property updatedProperty)
         {
-            await _propertiesCollection.ReplaceOneAsync(x => x.Id == id, updatedProperty);
+            await _propertiesCollection.ReplaceOneAsync(x => x.IdProperty == id, updatedProperty);
         }
 
         public async Task RemovePropertyAsync(string id)
         {
-            await _propertiesCollection.DeleteOneAsync(x => x.Id == id);
+            await _propertiesCollection.DeleteOneAsync(x => x.IdProperty == id);
         }
     }
 }

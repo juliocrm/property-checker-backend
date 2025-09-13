@@ -22,8 +22,9 @@ builder.Services.AddSingleton(sp =>
     return client.GetDatabase(settings.DatabaseName);
 });
 
-builder.Services.AddSingleton<IPropertyRepository, PropertyRepository>();
-builder.Services.AddSingleton<IPropertyService, PropertyService>();
+builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<IPropertyTraceRepository, PropertyTraceRepository>();
+builder.Services.AddScoped<IPropertyService, PropertyService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
